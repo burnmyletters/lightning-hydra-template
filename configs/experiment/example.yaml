@@ -33,6 +33,4 @@ model:
 datamodule:
   batch_size: 64
 
-logger:
-  wandb:
-    tags: ["mnist", "${name}"]
+logger: many_loggers

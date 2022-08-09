@@ -1,0 +1,10 @@
+_target_: src.models.mnist_module.MNISTLitModule
+lr: 0.001
+weight_decay: 0.0005
+
+net:
+ _target_: src.models.components.timm_models.TimmModel
+ model_name: resnet18
+ num_classes: 10
+ in_chans: 1
+

@@ -33,4 +33,3 @@ datamodule:
   batch_size: 64
 
 logger: many_loggers
-

@@ -10,7 +10,7 @@ loss:
   _target_: torch.nn.CrossEntropyLoss
 
 net:
- _target_: src.models.components.timm_models.TimmModel
- model_name: resnet18
- num_classes: 10
- in_chans: 1
+  _target_: src.models.components.timm_models.TimmModel
+  model_name: resnet18
+  num_classes: 10
+  in_chans: 1

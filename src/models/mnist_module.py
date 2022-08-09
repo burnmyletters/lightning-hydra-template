@@ -25,6 +25,7 @@ class MNISTLitModule(LightningModule):
         self,
         net: torch.nn.Module,
         optimizer: torch.optim.Optimizer,
+        loss: torch.nn.Module,
     ):
         super().__init__()
 
@@ -35,7 +36,7 @@ class MNISTLitModule(LightningModule):
         self.net = net
 
         # loss function
-        self.criterion = torch.nn.CrossEntropyLoss()
+        self.criterion = loss
 
         # use separate metric instance for train, val and test step
         # to ensure a proper reduction over the epoch

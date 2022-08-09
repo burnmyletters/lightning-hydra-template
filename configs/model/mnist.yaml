@@ -6,11 +6,9 @@ optimizer:
   lr: 0.001
   weight_decay: 0.0
 
-#net:
-#  _target_: src.models.components.timm_models.TimmModel
-#  model_name: resnet18
-#  num_classes: 10
-#  in_chans: 1
+loss:
+  _target_: torch.nn.CrossEntropyLoss
+
 net:
   _target_: src.models.components.simple_dense_net.SimpleDenseNet
   input_size: 784

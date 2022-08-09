@@ -7,7 +7,6 @@ defaults:
   - override /datamodule: mnist.yaml
   - override /model: mnist_resnet18.yaml
   - override /callbacks: default.yaml
-  - override /logger: null
   - override /trainer: default.yaml
 
 # all parameters below will be merged with parameters from default configurations set above
@@ -15,7 +14,6 @@ defaults:
 
 # name of the run determines folder name in logs
 name: "resnet18"
-
 seed: 12345
 
 trainer:
@@ -24,7 +22,8 @@ trainer:
   gradient_clip_val: 0.5
 
 model:
-  lr: 0.002
+  optimizer:
+    lr: 0.002
   net:
     lin1_size: 128
     lin2_size: 256
@@ -34,3 +33,4 @@ datamodule:
   batch_size: 64
 
 logger: many_loggers
+
